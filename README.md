@@ -13,7 +13,29 @@
 
  <img src="images/IMG_20260630_153647763.jpg" width="800">
 
- Unscrew the screws visible on both sides after removing the handle.
+ Unscrew the screws visible on both sides after removing the handle.  
+ The cover is still held in place by clips, so slide a flat-head screwdriver under the rear of the top panel and pry it up.  
+ The panel should come loose, allowing you to open it.  
 
  <img src="images/IMG_20260630_153707260.jpg" width="800">
+
+ After opening, you should see a small black box containing the Wi-Fi module (RTL8720CF); unscrew it and open it.
+
+ <img src="images/IMG_20260630_155315802.jpg" width="800">
+
+ 
+ After opening the unit, you should see a circuit board with a labeled 4-pin connector;  
+ disconnect the cable attached to it and cut off the plastic connector. Solder the wires to the ESP32,  
+ matching the wire colors and their original pinout from the connector.  
+
+ <img src="images/IMG_20260630_153741040.jpg" width="800">
+ 
+ After soldering, create a new device in ESPHome, then paste the code from the "esphome config" file below the `captive_portal` section and define the UART pins you selected.
+
+ 
+
+
+ 
+
+ 
 
