@@ -1,6 +1,8 @@
 # ProBreeze-PB-D-06W-Dehumidifier-HA-mod
  Tuya cloud-cut modification for the ProBreeze PB-D-06W dehumidifier (Wi-Fi module replacement required!)
 
+ !!! The dehumidifier does not lose its functionality, as the Wi-Fi module is merely an add-on; the unit is controlled by a microcontroller on the mainboard that communicates with the module via UART. !!!  
+
  Requirements:  
  Soldering iron  
  Esp32 (any, even esp8266 would work)  
