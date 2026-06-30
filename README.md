@@ -13,3 +13,7 @@
 
  <img src="images/IMG_20260630_153647763.jpg" width="800">
 
+ Unscrew the screws visible on both sides after removing the handle.
+
+ <img src="images/IMG_20260630_153707260.jpg" width="800">
+
