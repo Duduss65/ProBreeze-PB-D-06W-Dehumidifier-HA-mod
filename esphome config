@@ -1,0 +1,85 @@
+logger:
+  level: DEBUG
+
+uart:
+  tx_pin: 16  # or defined for your's esp32
+  rx_pin: 17
+  id: tuya_uart
+  baud_rate: 9600
+  debug:
+    direction: BOTH
+
+tuya:
+  id: tuya_mcu
+  uart_id: tuya_uart
+
+switch:
+  - platform: tuya             
+    name: "Power"
+    switch_datapoint: 1
+    icon: "mdi:power-standby"
+
+  - platform: tuya             
+    name: "Button Lock"
+    switch_datapoint: 7
+    icon: "mdi:lock"
+
+  - platform: tuya
+    name: "Night Mode"
+    switch_datapoint: 5
+    icon: "mdi:weather-night"
+
+sensor:
+  - platform: tuya
+    name: "Air Humidity" 
+    sensor_datapoint: 3          
+    device_class: humidity
+    state_class: measurement
+    unit_of_measurement: "%"
+    accuracy_decimals: 0
+
+  - platform: tuya
+    name: "Error Codes"           
+    id: kody_bledu
+    sensor_datapoint: 11
+    accuracy_decimals: 0
+
+binary_sensor:
+  - platform: template
+    name: "Water Tank"
+    device_class: problem
+    lambda: |-
+      if (id(kody_bledu).state > 0) {
+      return true;
+      } else {
+        return false;
+      }
+
+number:
+  - platform: tuya
+    name: "Target Humidity"
+    number_datapoint: 4             
+    min_value: 30
+    max_value: 80
+    step: 5
+    unit_of_measurement: "%"
+    mode: SLIDER
+
+select:
+  - platform: tuya
+    name: "Fan Speed"
+    enum_datapoint: 6               
+    icon: "mdi:fan"
+    optimistic: true
+    options: 
+      0: "High"
+      1: "Low"
+
+  - platform: tuya
+    name: "Mode"             
+    enum_datapoint: 2
+    optimistic: true
+    icon: "mdi:cog"
+    options: 
+      0: "Auto"
+      1: "Continuos"
