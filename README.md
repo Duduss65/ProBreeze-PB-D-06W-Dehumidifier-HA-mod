@@ -11,5 +11,5 @@
 
  First, you need to open the dehumidifier's top cover, so remove the handle by twisting it and pulling it away from the unit's housing.
 
- <img src="images/IMG_20260630_153647763.jpg" width="400">
+ <img src="images/IMG_20260630_153647763.jpg" width="800">
 
